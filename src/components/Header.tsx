@@ -36,7 +36,7 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <Image
                 src="/generated-image.png"
-                alt="CraftMVP Logo"
+                alt="StellarMVP Logo"
                 width={40}
                 height={40}
                 className="rounded-full"
@@ -45,7 +45,7 @@ export default function Header() {
                 whileHover={{ scale: 1.05 }}
                 className="text-2xl font-bold text-white -ml-50"
               >
-                Craft<span className="text-blue-300">MVP</span>
+                Stellar<span className="text-blue-300">MVP</span>
               </motion.div>
             </div>
           </Link>

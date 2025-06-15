@@ -21,7 +21,7 @@ const Footer = () => {
               <div className="p-2 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg">
                 <Code2 className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">CraftMVP</span>
+              <span className="text-xl font-bold text-white">StellarMVP</span>
             </Link>
             
             <p className="text-gray-400 mb-6 max-w-md mx-auto">
@@ -42,7 +42,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <p className="text-gray-400 text-sm">
-              © {currentYear} CraftMVP. All rights reserved.
+              © {currentYear} StellarMVP. All rights reserved.
             </p>
           </div>
         </div>

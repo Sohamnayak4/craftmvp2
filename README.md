@@ -1,6 +1,6 @@
-# CraftMVP - MVP Development Agency
+# StellarMVP - MVP Development Agency
 
-A modern, responsive website for CraftMVP - a development agency specializing in rapid MVP and landing page development.
+A modern, responsive website for StellarMVP - a development agency specializing in rapid MVP and landing page development.
 
 ## 🚀 Features
 
@@ -68,7 +68,7 @@ A modern, responsive website for CraftMVP - a development agency specializing in
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd craftmvp
+   cd stellarmvp
    ```
 
 2. **Install dependencies**
@@ -122,7 +122,7 @@ The project is ready for deployment on Vercel:
 
 ## 📄 License
 
-This project is proprietary software for CraftMVP.
+This project is proprietary software for StellarMVP.
 
 ## 🤝 Contributing
 
@@ -130,4 +130,4 @@ This is a client project. For any modifications or improvements, please contact 
 
 ---
 
-Built with ❤️ by CraftMVP 
+Built with ❤️ by StellarMVP 
