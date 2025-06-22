@@ -36,22 +36,57 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="py-20 bg-gray-900/50 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            What We <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Craft</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            From initial concept to market-ready product, we handle every step of your journey with precision and speed.
-          </p>
-        </motion.div>
+    <>
+      {/* Services Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'StellarMVP Services',
+            description: 'MVP development services from landing pages to full product launches',
+            itemListElement: services.map((service, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              item: {
+                '@type': 'Service',
+                name: service.title,
+                description: service.description,
+                provider: {
+                  '@type': 'Organization',
+                  name: 'StellarMVP'
+                },
+                serviceType: 'Web Development',
+                availableChannel: {
+                  '@type': 'ServiceChannel',
+                  serviceUrl: 'https://www.stellarmvp.xyz',
+                  serviceSmsNumber: '',
+                  servicePhone: '',
+                  availableLanguage: 'English'
+                }
+              }
+            }))
+          })
+        }}
+      />
+      
+      <section id="services" className="py-20 bg-gray-900/50 relative" itemScope itemType="https://schema.org/Service">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4" itemProp="name">
+              What We <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Craft</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto" itemProp="description">
+              From initial concept to market-ready product, we handle every step of your journey with precision and speed.
+            </p>
+          </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
@@ -90,6 +125,7 @@ const Services = () => {
         </div>
       </div>
     </section>
+    </>
   )
 }
 
