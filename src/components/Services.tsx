@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Rocket, Palette, Code, Zap } from 'lucide-react'
+import { PRIMARY_DOMAIN } from '@/lib/seo-utils'
 
 const Services = () => {
   const services = [
@@ -60,7 +61,7 @@ const Services = () => {
                 serviceType: 'Web Development',
                 availableChannel: {
                   '@type': 'ServiceChannel',
-                  serviceUrl: 'https://www.stellarmvp.xyz',
+                  serviceUrl: PRIMARY_DOMAIN,
                   serviceSmsNumber: '',
                   servicePhone: '',
                   availableLanguage: 'English'

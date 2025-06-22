@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
+import { PRIMARY_DOMAIN, getOgImageUrl, generateOrganizationSchema } from '@/lib/seo-utils'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -35,20 +36,20 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.stellarmvp.xyz'),
+  metadataBase: new URL(PRIMARY_DOMAIN),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.stellarmvp.xyz',
+    url: PRIMARY_DOMAIN,
     title: 'StellarMVP - Transform Ideas into Products | MVP Development Agency',
     description: 'We craft beautiful MVPs that validate your ideas and accelerate your startup journey. Expert web development, landing pages, and full-stack applications delivered in 2-14 days.',
     siteName: 'StellarMVP',
     images: [
       {
-        url: '/og-image.png',
+        url: getOgImageUrl('/og-image.png'),
         width: 1200,
         height: 630,
         alt: 'StellarMVP - MVP Development Agency',
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'StellarMVP - Transform Ideas into Products',
     description: 'We craft beautiful MVPs that validate your ideas and accelerate your startup journey. From landing pages to full applications in record time.',
-    images: ['/og-image.png'],
+    images: [getOgImageUrl('/og-image.png')],
   },
   robots: {
     index: true,
@@ -78,24 +79,9 @@ export const metadata: Metadata = {
   },
 }
 
-// JSON-LD Structured Data
+// JSON-LD Structured Data with enhanced service catalog
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'StellarMVP',
-  url: 'https://www.stellarmvp.xyz',
-  logo: 'https://www.stellarmvp.xyz/og-image.png',
-  description: 'MVP development agency that transforms ideas into market-ready products',
-  foundingDate: '2023',
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'Customer Service',
-    url: 'https://cal.com/soham-nayak-04/30min'
-  },
-  sameAs: [
-    'https://twitter.com/stellarmvp',
-    'https://linkedin.com/company/stellarmvp'
-  ],
+  ...generateOrganizationSchema(),
   offers: {
     '@type': 'Service',
     name: 'MVP Development Services',

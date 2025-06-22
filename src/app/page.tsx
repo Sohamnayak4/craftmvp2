@@ -8,6 +8,7 @@ import Portfolio from '@/components/Portfolio'
 import Pricing from '@/components/Pricing'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
+import { PRIMARY_DOMAIN } from '@/lib/seo-utils'
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
             '@type': 'WebPage',
             name: 'StellarMVP - MVP Development Agency',
             description: 'Transform your ideas into market-ready products with beautiful MVPs delivered in 2-14 days',
-            url: 'https://www.stellarmvp.xyz',
+            url: PRIMARY_DOMAIN,
             mainEntity: {
               '@type': 'Organization',
               name: 'StellarMVP',
@@ -34,7 +35,7 @@ export default function Home() {
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Home',
-                  item: 'https://www.stellarmvp.xyz'
+                  item: PRIMARY_DOMAIN
                 }
               ]
             }

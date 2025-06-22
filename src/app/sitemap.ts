@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { PRIMARY_DOMAIN } from '@/lib/seo-utils'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.stellarmvp.xyz'
+  const baseUrl = PRIMARY_DOMAIN
   
   return [
     {
